@@ -1,0 +1,92 @@
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+.Resume{
+    font-size: 20px;
+    text-align: center;
+}
+
+.birthday{
+    display: flex;
+    justify-content: space-between;
+    width: 230px;
+    margin-top: 5px;
+    margin: 5px;
+}
+
+.skills{
+    margin: 5px;
+}
+
+h3,h2{
+    margin: 0px;
+}
+
+.mainBlock{
+    padding: 30px;
+    min-width: 50%;
+    max-width: 70%;
+    margin: 0 auto;
+    min-hight: 60%;
+    margin-top: 50px;
+    background-color: rgba(247, 248, 255, 0.53);
+    border-radius: 10px;
+    border: 3px solid white;
+}
+
+.nameAndSurname{
+    display: flex;
+    width: 190px;
+    justify-content: space-between;
+    margin: 10px;
+    margin-bottom: 15px;
+}
+
+.button{
+    cursor: pointer;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient1 15s ease infinite;
+    width: 200px;
+    height: 60px;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    transition: .5s ease-in-out 0s;
+}
+
+.button:hover{
+    transform:  scale(1.05);
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes gradient1 {
+    0% {
+        background-position: 100% 50%;
+    }
+    50% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
