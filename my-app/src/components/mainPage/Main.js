@@ -3,6 +3,7 @@ import Ms from "./mainStyle.module.css";
 import {useSelector} from "react-redux";
 
 
+
 const Main = () => {
     const data = useSelector((state) => state.resumeInfoReducer.inforesume)
 
@@ -15,13 +16,13 @@ const Main = () => {
             </div>
 
             <div className={Ms.nameAndSurname}>
-                <h2>{data.name}</h2>
-                <h2>{data.surname}</h2>
+                <h2 style={{ fontSize:'22px' }}>{data.name}</h2>
+                <h2 style={{ fontSize:'22px' }}>{data.surname}</h2>
             </div>
 
             <div className={Ms.birthday}>
                 <p>День народження:</p>
-                <p>{data.dateofbirth}</p>
+                <p style={{margin:'0px'}}>{data.dateofbirth}</p>
             </div>
 
             <div>
@@ -39,7 +40,10 @@ const Main = () => {
             <h4 style={{textAlign:'center'}}>Контакти</h4>
             {data.contacts.map(e => <p>{e.main} {e.info}</p>)}
 
-                <button className={Ms.button}>Sign in</button>
+                    <button className={Ms.button} >Sign in</button>
+
+
+
         </div>
     );
 };
