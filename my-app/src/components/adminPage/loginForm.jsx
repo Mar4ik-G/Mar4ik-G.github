@@ -1,6 +1,9 @@
 import React, {forwardRef, useRef, useState} from 'react';
 import 'rsuite/dist/rsuite.min.css';
 import {Button, ButtonToolbar, Form, Schema} from "rsuite";
+import {useDispatch, useSelector} from "react-redux";
+
+
 
 const { StringType, NumberType } = Schema.Types;
 
@@ -39,7 +42,7 @@ const TextField = forwardRef((props, ref) => {
 });
 
 const LoginForm = () => {
-
+    const dispatch = useDispatch();
     const formRef = useRef();
     const [formError, setFormError] = useState({});
     const [formValue, setFormValue] = useState({
@@ -49,19 +52,25 @@ const LoginForm = () => {
         verifyPassword: ''
     });
 
+
+
     const handleSubmit = () => {
         if (!formRef.current.check()) {
             console.error('Form Error');
             return;
+
+        }else{
+            dispatch({type:'setV',payload:formValue})
+            console.log(formValue, 'Form Value');
         }
-        console.log(formValue, 'Form Value');
+
     };
 
-    const handleCheckEmail = () => {
-        formRef.current.checkForField('email', checkResult => {
-            console.log(checkResult);
-        });
-    };
+    // const handleCheckEmail = () => {
+    //     formRef.current.checkForField('email', checkResult => {
+    //         console.log(checkResult);
+    //     });
+    // };
 
     return(
         <div>
@@ -88,7 +97,7 @@ const LoginForm = () => {
                         Submit
                     </Button>
 
-                    <Button onClick={handleCheckEmail}>Check Email</Button>
+                    {/*<Button onClick={handleCheckEmail}>Check Email</Button>*/}
                 </ButtonToolbar>
             </Form>
         </div>
