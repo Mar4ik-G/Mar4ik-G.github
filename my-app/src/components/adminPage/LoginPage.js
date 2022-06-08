@@ -1,9 +1,9 @@
 import React from 'react';
 import LoginForm from "./loginForm";
-import As from "./AdminPage.module.css"
+import As from "./LoginPage.module.css"
 
 
-const AdminPage = () => {
+const LoginPage = () => {
 
         return (
             <div className={As.mainblock}>
@@ -12,4 +12,4 @@ const AdminPage = () => {
             )
 
 }
-export default AdminPage;
+export default LoginPage;

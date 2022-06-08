@@ -5,11 +5,11 @@ const initialState = {
 
 }
 
-const adminReducer = (state = initialState, action) => {
+const loginReducer = (state = initialState, action) => {
     switch (action.type) {
         default:
             return state;
     }
 }
 
-export default adminReducer;
+export default loginReducer;
