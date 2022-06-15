@@ -50,24 +50,39 @@ h3,h2{
     margin-bottom: 15px;
 }
 
-.button{
-    cursor: pointer;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient1 15s ease infinite;
-    width: 200px;
-    height: 60px;
-    border: 2px solid white;
-    border-radius: 10px;
-    color: white;
-    font-size: 20px;
+/*.button{*/
+/*    cursor: pointer;*/
+/*    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);*/
+/*    background-size: 400% 400%;*/
+/*    animation: gradient1 15s ease infinite;*/
+/*    width: 200px;*/
+/*    height: 60px;*/
+/*    border: 2px solid white;*/
+/*    border-radius: 10px;*/
+/*    color: white;*/
+/*    font-size: 20px;*/
+/*    font-family: sans-serif;*/
+/*    text-decoration: none;*/
+/*    transition: .5s ease-in-out 0s;*/
+/*}*/
+
+/*.button:hover{*/
+/*    transform:  scale(1.05);*/
+/*}*/
+
+.linkB{
+    font-size: 25px;
     font-family: sans-serif;
+    color: #23a6d5;
     text-decoration: none;
-    transition: .5s ease-in-out 0s;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 25px;
+
 }
 
-.button:hover{
-    transform:  scale(1.05);
+.linkB:active{
+    text-decoration: none;
 }
 
 

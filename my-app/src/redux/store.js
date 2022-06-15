@@ -1,6 +1,5 @@
 import {combineReducers, createStore} from "redux";
 import resumeInfoReducer from "./reducers/resumeInfoReducer";
-
 import loginReducer from "./reducers/loginReducer";
 
 const rootReducer = combineReducers({

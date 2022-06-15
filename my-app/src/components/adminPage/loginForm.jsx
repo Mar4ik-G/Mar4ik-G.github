@@ -62,6 +62,7 @@ const LoginForm = () => {
         }else{
             dispatch({type:'setV',payload:formValue})
             console.log(formValue, 'Form Value');
+            window.location.href = 'http://localhost:3000/admin';
         }
 
     };
@@ -93,8 +94,8 @@ const LoginForm = () => {
                 />
 
                 <ButtonToolbar>
-                    <Button appearance="primary" onClick={handleSubmit}>
-                        Submit
+                    <Button appearance="primary" onClick={handleSubmit} >
+                        Sign up
                     </Button>
 
                     {/*<Button onClick={handleCheckEmail}>Check Email</Button>*/}

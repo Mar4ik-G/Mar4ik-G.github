@@ -14,7 +14,6 @@ function App() {
             <NavLink className="link" to="/">HOME</NavLink>
             <NavLink className="link" to="/login">LOGIN</NavLink>
             <NavLink className="link" to="/admin">ADMIN</NavLink>
-
         </header>
         <Provider store={store}>
             <Routes>
