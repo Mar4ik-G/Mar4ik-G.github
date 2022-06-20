@@ -11,26 +11,6 @@ const AdminPage = () => {
 
     useEffect(() => {
         getInfo(setInfo, "profileInfo");
-        // addInfo( {
-        //     name: "Марк",
-        //         surname: "Горбайчук",
-        //         dateofbirth: "01.06.2002",
-        //         placeOfResidence: "city.Lviv",
-        //         contacts: [
-        //         {main: "Номер телефону: ", info: "+380971195151"},
-        //         {main: "Електронна пошта: ", info: "brainocswell@gmail.com"},
-        //     ],
-        //         hardAndSoftSkills: [
-        //         {data: "вміння працювати в команді, критичне мислення, лідерство, креативність," +
-        //                 " вміння дотримуватися дедлайни, відповідальність та дисциплінованість"},
-        //         {data: "TypeScript, JS, HTML5, CSS3, bootstrap, React, Redux ect."}
-        //     ],
-        //         experiance: "Немає комерційного досвіду",
-        //         education: [
-        //         {data: "унівеситет: вища незакінчена освіта. Спеціальність:Компютерні науки"},
-        //         {data: "Lgoos IT Academy"},
-        //     ],
-        // },"profileInfo")
     }, []);
 
     const contactInfo =
@@ -72,7 +52,7 @@ const AdminPage = () => {
                 </div>
 
                 <div>
-                    <Tab data={info.experiance} text={"Дата народження"} onChange={(e) => {
+                    <Tab data={info.experiance} text={"Досвід в IT"} onChange={(e) => {
                         setInfo({...info, experiance:e});
                     }}/>
                 </div>

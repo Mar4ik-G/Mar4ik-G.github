@@ -2,10 +2,11 @@ import React, {forwardRef, useRef, useState} from 'react';
 import 'rsuite/dist/rsuite.min.css';
 import {Button, ButtonToolbar, Form, Schema} from "rsuite";
 import {useDispatch, useSelector} from "react-redux";
+import {store} from "../../redux/store";
+import {useNavigate} from "react-router-dom";
 
 
-
-const { StringType, NumberType } = Schema.Types;
+const {StringType, NumberType} = Schema.Types;
 
 const model = Schema.Model({
     name: StringType().isRequired('This field is required.'),
@@ -32,7 +33,7 @@ const model = Schema.Model({
 });
 
 const TextField = forwardRef((props, ref) => {
-    const { name, label, accepter, ...rest } = props;
+    const {name, label, accepter, ...rest} = props;
     return (
         <Form.Group controlId={`${name}-4`} ref={ref}>
             <Form.ControlLabel>{label} </Form.ControlLabel>
@@ -42,9 +43,11 @@ const TextField = forwardRef((props, ref) => {
 });
 
 const LoginForm = () => {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const formRef = useRef();
     const [formError, setFormError] = useState({});
+
     const [formValue, setFormValue] = useState({
         name: '',
         email: '',
@@ -53,39 +56,34 @@ const LoginForm = () => {
     });
 
 
-
     const handleSubmit = () => {
         if (!formRef.current.check()) {
             console.error('Form Error');
             return;
+        } else {
+            const isAuth = true
+            dispatch({type: 'setIsAuth', payload: isAuth})
+            console.log(store.getState().loginReducer.isAuth)
+            navigate('/admin')
 
-        }else{
-            dispatch({type:'setV',payload:formValue})
-            console.log(formValue, 'Form Value');
-            window.location.href = 'http://localhost:3000/admin';
+
         }
 
     };
 
-    // const handleCheckEmail = () => {
-    //     formRef.current.checkForField('email', checkResult => {
-    //         console.log(checkResult);
-    //     });
-    // };
-
-    return(
+    return (
         <div>
             <Form
-                style={{display:'flex',flexDirection:"column", justifyContent:'center', alignItems:"center"}}
+                style={{display: 'flex', flexDirection: "column", justifyContent: 'center', alignItems: "center"}}
                 ref={formRef}
                 onChange={setFormValue}
                 onCheck={setFormError}
                 formValue={formValue}
                 model={model}
             >
-                <TextField name="name" label="Username" />
-                <TextField name="email" label="Email" />
-                <TextField name="password" label="Password" type="password" autoComplete="off" />
+                <TextField name="name" label="Username"/>
+                <TextField name="email" label="Email"/>
+                <TextField name="password" label="Password" type="password" autoComplete="off"/>
                 <TextField
                     name="verifyPassword"
                     label="Verify password"
@@ -94,11 +92,11 @@ const LoginForm = () => {
                 />
 
                 <ButtonToolbar>
-                    <Button appearance="primary" onClick={handleSubmit} >
+                    <Button appearance="primary" onClick={handleSubmit}>
                         Sign up
                     </Button>
 
-                    {/*<Button onClick={handleCheckEmail}>Check Email</Button>*/}
+
                 </ButtonToolbar>
             </Form>
         </div>

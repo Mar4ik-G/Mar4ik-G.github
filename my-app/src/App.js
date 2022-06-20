@@ -5,6 +5,8 @@ import LoginPage from "./components/adminPage/LoginPage";
 import AdminPage from "./components/loginPage/AdminPage";
 import {Provider} from "react-redux";
 import {store} from "./redux/store";
+import PrivateRoute from "./components/loginPage/PrivateRouteForAdmin";
+
 
 
 function App() {
@@ -18,8 +20,8 @@ function App() {
         <Provider store={store}>
             <Routes>
                 <Route path="/" element={<Main/>}></Route>
-                <Route path="/login" element={<LoginPage/>}></Route>
-                <Route path="/admin" element={<AdminPage/>}></Route>
+                <Route path="/login" element={<LoginPage />}></Route>
+                <Route path='/admin' element={<PrivateRoute  redirectPath={"/"} children={<AdminPage/>}/>}></Route>
             </Routes>
         </Provider>
     </div>
